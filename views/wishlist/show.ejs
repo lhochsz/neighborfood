@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3><%= wishlistItem.food %></h3>
+      <p><b>Food: </b><%= wishlistItem.food %></p>
+      <p><b>ID: </b><%= wishlistItem._id %></p>
+      <p><b>Amount: </b><%= wishlistItem.amount %></p>
+    </div>
+
+    <a href="/wishlist" class="btn btn-primary">Back</a>
+    <a href="/wishlist/<%= wishlistItem._id %>/edit" class="btn btn-danger">Edit</a>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

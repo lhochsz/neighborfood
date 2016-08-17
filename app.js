@@ -11,6 +11,7 @@ mongoose.Promise = require('bluebird')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var fridge = require('./routes/fridge');
+var wishlist = require('./routes/wishlist');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/fridge', fridge);
+app.use('/wishlist', wishlist);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

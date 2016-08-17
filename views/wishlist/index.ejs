@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3>MyWishlist:</h3>
+      <% wishlistItems.forEach(function(wishlistItem) { %>
+        <h4>
+          <form method="POST" action="/wishlist/<%= wishlistItem._id %>?_method=DELETE">
+            <a href="/wishlist/<%= wishlistItem._id %>">
+              <%= wishlistItem.food + ' - ' + wishlistItem.amount %>
+            </a>
+            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+        </h4>
+      <% }) %>
+    </div>
+    <a href="/wishlist/new" class="btn btn-primary">New</a>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

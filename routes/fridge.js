@@ -11,7 +11,7 @@ function makeError(res, message, status) {
 
 // INDEX
 router.get('/', function(req, res, next) {
-  // get all the todos and render the index view
+  // get all the fridge items and render the index view
   FridgeItem.find({})
   .then(function(fridgeItems) {
     res.render('fridge/index', { fridgeItems: fridgeItems } );
