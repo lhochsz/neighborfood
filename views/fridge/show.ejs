@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3>SHOW</h3>
+      <p><b>Food: </b><%= fridgeItem.food %></p>
+      <p><b>ID: </b><%= fridgeItem._id %></p>
+      <p><b>Amount: </b><%= fridgeItem.amount %></p>
+    </div>
+
+    <a href="/fridge" class="btn btn-primary">Back</a>
+    <a href="/fridge/<%= fridgeItem._id %>/edit" class="btn btn-danger">Edit</a>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

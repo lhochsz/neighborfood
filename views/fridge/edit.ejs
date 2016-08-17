@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <h3>EDIT</h3>
+
+    <form class="fridgeItem-form" action="/fridge/<%= fridgeItem._id %>?_method=PUT" method="post">
+      <% include _form %>
+      <a href="/fridge/<%= fridgeItem._id %>" class="btn btn-primary">Back</a>
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
