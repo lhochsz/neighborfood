@@ -14,3 +14,13 @@
          value="<%= fridgeItem.amount %>">
 </div>
 
+<div class="form-group">
+  <label for="title">Neighborhood</label>
+  <select type="text"
+          class="form-control"
+         name="neighborhood"
+         value="<%= fridgeItem.neighborhood %>">
+         <% include ../partials/neighborhoods %>
+</select>
+</div>
+

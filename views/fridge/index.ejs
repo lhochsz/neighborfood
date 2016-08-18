@@ -12,16 +12,21 @@
   <main>
     <div>
       <h3>MyFridge:</h3>
+      <p class="noItems"></p>
       <% fridgeItems.forEach(function(fridgeItem) { %>
         <h4>
-          <form method="POST" action="/fridge/<%= fridgeItem._id %>?_method=DELETE">
-            <a href="/fridge/<%= fridgeItem._id %>">
-              <%= fridgeItem.food + ' - ' + fridgeItem.amount %>
-            </a>
-            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
-          </form>
+          <% if (fridgeItem) { %>
+              <form method="POST" action="/fridge/<%= fridgeItem._id %>?_method=DELETE">
+                <a href="/fridge/<%= fridgeItem._id %>">
+                  <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %>
+                </a>
+                <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+              </form>
+          <% } else if (!fridgeItem) { %>
+                <% $(".noItems").innerHTML("No items") %>
         </h4>
-      <% }) %>
+      <% }; %>
+      <% }); %>
     </div>
     <a href="/fridge/new" class="btn btn-primary">New</a>
   </main>

@@ -31,7 +31,8 @@ router.get('/', authenticate, function(req, res, next) {
 router.get('/new', authenticate, function(req, res, next) {
   var fridgeItem = {
     food: '',
-    amount: ''
+    amount: '',
+    neighborhood: '',
   };
   res.render('fridge/new', { fridgeItem: fridgeItem, message: req.flash() });
 });
@@ -47,7 +48,8 @@ router.get('/:id', authenticate, function(req, res, next) {
 router.post('/', authenticate, function(req, res, next) {
   var fridgeItem = new FridgeItem ({
     food:     req.body.food,
-    amount: req.body.amount
+    amount: req.body.amount,
+    neighborhood: req.body.neighborhood
   });
   // Since a user's fridge items are an embedded document, we just need to push a new
   // item to the user's list of fridge items and save the user.
@@ -74,6 +76,7 @@ router.put('/:id', authenticate, function(req, res, next) {
   else {
     fridgeItem.food = req.body.food;
     fridgeItem.amount = req.body.amount;
+    fridgeItem.neighborhood = req.body.neighborhood;
     currentUser.save()
     .then(function(saved) {
       res.redirect('/fridge');
