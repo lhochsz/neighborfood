@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 var FridgeItem = require('./fridge');
-var WishlistItem = require('./wishlist');
 
 var UserSchema = new mongoose.Schema({
   local : {
@@ -9,7 +8,7 @@ var UserSchema = new mongoose.Schema({
     password : String
   },
   fridgeItems : [FridgeItem.schema],
-  wishlistItems: [WishlistItem.schema]
+  email : String
 });
 
 UserSchema.methods.encrypt = function(password) {
