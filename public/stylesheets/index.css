@@ -14,6 +14,17 @@ a {
   font: 100px 'Montserrat', sans-serif;
 }
 
+.explain {
+  background-color: rgba(174, 181, 190, 0.8);
+  padding: 3em;
+  font: 25px 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+}
+
+p.green {
+  color: rgb(80, 122, 15);
+}
+
 nav {
   font-family: 'Montserrat', sans-serif;
 }

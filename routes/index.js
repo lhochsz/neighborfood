@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
+var FridgeItem = require('../models/fridge');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -38,6 +39,12 @@ router.post('/login', function(req, res, next) {
   });
 
   return loginProperty(req, res, next);
+});
+
+// Neighborhood
+router.get('/atlanta', function(req, res, next) {
+  // get all the global fridge items and render the index view
+    res.render('fridge/atlanta');
 });
 
 // GET /logout

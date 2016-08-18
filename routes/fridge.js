@@ -33,6 +33,7 @@ router.get('/new', authenticate, function(req, res, next) {
     food: '',
     amount: '',
     neighborhood: '',
+    meetingLocation: ''
   };
   res.render('fridge/new', { fridgeItem: fridgeItem, message: req.flash() });
 });
@@ -49,7 +50,8 @@ router.post('/', authenticate, function(req, res, next) {
   var fridgeItem = new FridgeItem ({
     food:     req.body.food,
     amount: req.body.amount,
-    neighborhood: req.body.neighborhood
+    neighborhood: req.body.neighborhood,
+    meetingLocation: req.body.meetingLocation
   });
   // Since a user's fridge items are an embedded document, we just need to push a new
   // item to the user's list of fridge items and save the user.
@@ -77,6 +79,7 @@ router.put('/:id', authenticate, function(req, res, next) {
     fridgeItem.food = req.body.food;
     fridgeItem.amount = req.body.amount;
     fridgeItem.neighborhood = req.body.neighborhood;
+    fridgeItem.meetingLocation = req.body.meetingLocation;
     currentUser.save()
     .then(function(saved) {
       res.redirect('/fridge');
@@ -99,6 +102,17 @@ router.delete('/:id', authenticate, function(req, res, next) {
     return next(err);
   });
 });
+
+// // Index for Neighborhood
+// router.get('/fridge/atlanta', authenticate, function(req, res, next) {
+//   FridgeItem.find({fridgeItems})
+//   .then(function(fridgeItems) {
+//     res.render('/atlanta', { fridgeItems: fridgeItems, message: req.flash() });
+//   }, function(err) {
+//     return next(err);
+//   });
+// });
+
 
 module.exports = router;
 
