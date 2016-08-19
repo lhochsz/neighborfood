@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <% include ../partials/head %>
+      <% include ../partials/head %>
 </head>
 
 <body class="container-fluid">
@@ -9,9 +9,19 @@
     <% include ../partials/header %>
   </header>
 
+  <div class="jumbotron neighborhood">
     <main>
-      <h3>Neighborhood</h3>
-  </main>
+        <h3>Neighborhood</h3>
+    </main>
+  </div>
+
+        <% fridgeItems.forEach(function(fridgeItem) { %>
+        <h4>
+          <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood + ' - ' + fridgeItem.meetingLocation %>
+        </h4>
+      <% }); %>
+          <a href="/fridge/new" class="btn btn-primary">New</a>
+
 
   <footer>
     <% include ../partials/footer %>

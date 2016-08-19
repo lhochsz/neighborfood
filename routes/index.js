@@ -41,10 +41,11 @@ router.post('/login', function(req, res, next) {
   return loginProperty(req, res, next);
 });
 
-// Neighborhood
+// Neighborhood INDEX
 router.get('/atlanta', function(req, res, next) {
-  // get all the global fridge items and render the index view
-    res.render('fridge/atlanta');
+
+    var fridgeItems = global.currentUser.fridgeItems;
+    res.render('fridge/atlanta', { fridgeItems: fridgeItems, message: req.flash() });
 });
 
 // GET /logout

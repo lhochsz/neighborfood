@@ -11,7 +11,9 @@
 
   <main>
     <div>
-      <h3>MyFridge:</h3>
+      <div class="jumbotron index">
+        <h3>MyFridge</h3>
+      </div>
       <% fridgeItems.forEach(function(fridgeItem) { %>
         <h4>
               <form method="POST" action="/fridge/<%= fridgeItem._id %>?_method=DELETE">

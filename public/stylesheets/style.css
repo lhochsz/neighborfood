@@ -1,21 +1,55 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(40, 111, 177);
+  background-color: rgb(174, 181, 190);
   color: white;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+}
+
+a:hover {
+  color: rgb(80, 122, 15);
+  text-decoration: none;
 }
 
 .jumbotron {
-  background-color: rgba(40, 111, 177, 0.8);
   font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron.neighborhood {
+  background: #000 url("/images/cucumbers.jpeg") center center;
+  background-size: 100%;
+}
+
+.jumbotron.edit {
+  background: #000 url("/images/carrots.jpeg") center center;
+  background-size: 100%;
+}
+
+.jumbotron.index {
+  background: #000 url("/images/strawberries.jpeg") center center;
+  background-size: 100%;
+}
+
+.jumbotron.new {
+  background: #000 url("/images/blueberries.jpeg") center center;
+  background-size: 100%;
+}
+
+.jumbotron.show {
+  background: #000 url("/images/tomatos.jpeg") center center;
+  background-size: 100%;
+}
+
+h3 {
+  font-size: 60px;
 }
 
 nav {
   font-family: 'Montserrat', sans-serif;
 }
+
 
 

@@ -10,8 +10,10 @@
   </header>
 
   <main>
-    <div>
-      <h3><%= fridgeItem.food %></h3>
+    <div class="fridgeItems">
+      <div class="jumbotron show">
+        <h3><%= fridgeItem.food %></h3>
+      </div>
       <p><b>Food: </b><%= fridgeItem.food %></p>
       <p><b>ID: </b><%= fridgeItem._id %></p>
       <p><b>Amount: </b><%= fridgeItem.amount %></p>
@@ -19,8 +21,8 @@
       <p><b>Meeting Location: </b><%= fridgeItem.meetingLocation %></p>
     </div>
 
-    <a href="/fridge" class="btn btn-primary">Back</a>
-    <a href="/fridge/<%= fridgeItem._id %>/edit" class="btn btn-danger">Edit</a>
+    <a href="/fridge" class="btn btn-success">Back</a>
+    <a href="/fridge/<%= fridgeItem._id %>/edit" class="btn btn-info">Edit</a>
   </main>
 
   <footer>
