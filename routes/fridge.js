@@ -40,62 +40,69 @@ router.get('/new', authenticate, function(req, res, next) {
 
 // SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-  var fridgeItem = currentUser.fridgeItems.id(req.params.id);
-  if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
-  res.render('fridge/show', { fridgeItem: fridgeItem, message: req.flash() } );
-});
-
-// CREATE
-router.post('/', authenticate, function(req, res, next) {
-  var fridgeItem = new FridgeItem ({
-    food:     req.body.food,
-    amount: req.body.amount,
-    neighborhood: req.body.neighborhood,
-    meetingLocation: req.body.meetingLocation
-  });
-  // Since a user's fridge items are an embedded document, we just need to push a new
-  // item to the user's list of fridge items and save the user.
-  currentUser.fridgeItems.push(fridgeItem);
-  currentUser.save()
-  .then(function() {
-    res.redirect('/fridge');
+  FridgeItem.findById(req.params.id)
+  .then(function(fridgeItem) {
+    if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
+    res.render('fridge/show', { fridgeItem: fridgeItem, message: req.flash() } );
   }, function(err) {
     return next(err);
   });
 });
 
+// CREATE
+router.post('/', authenticate, function(req, res, next) {
+  FridgeItem.create({
+    food:     req.body.food,
+    amount: req.body.amount,
+    neighborhood: req.body.neighborhood,
+    meetingLocation: req.body.meetingLocation,
+    owner: currentUser._id
+  })
+  .then(function(item) {
+    currentUser.fridgeItems.push(item);
+    return currentUser.save();
+  })
+  .then(function() {
+    res.redirect('/fridge');
+  }, function(err) {
+    return next(err);
+  });
+
+  // Since a user's fridge items are an embedded document, we just need to push a new
+  // item to the user's list of fridge items and save the user.
+  // currentUser.fridgeItems.push(fridgeItem);
+  // currentUser.save()
+  // .then(function() {
+  //   res.redirect('/fridge');
+  // }, function(err) {
+  //   return next(err);
+  // });
+});
+
 // EDIT
 router.get('/:id/edit', authenticate, function(req, res, next) {
-  var fridgeItem = currentUser.fridgeItems.id(req.params.id);
-  if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
-  res.render('fridge/edit', { fridgeItem: fridgeItem, message: req.flash() } );
+  FridgeItem.findById(req.params.id)
+  .then(function(FridgeItem) {
+    if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
+    res.render('fridge/edit', { fridgeItem: fridgeItem, message: req.flash() } );
+  }, function(err) {
+    return next(err);
+  });
 });
 
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
-  var fridgeItem = currentUser.fridgeItems.id(req.params.id);
-  if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
-  else {
-    fridgeItem.food = req.body.food;
-    fridgeItem.amount = req.body.amount;
-    fridgeItem.neighborhood = req.body.neighborhood;
-    fridgeItem.meetingLocation = req.body.meetingLocation;
-    currentUser.save()
-    .then(function(saved) {
-      res.redirect('/fridge');
-    }, function(err) {
-      return next(err);
-    });
-  }
-});
-
-// DESTROY
-router.delete('/:id', authenticate, function(req, res, next) {
-  var fridgeItem = currentUser.fridgeItems.id(req.params.id);
-  if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
-  var index = currentUser.fridgeItems.indexOf(fridgeItem);
-  currentUser.fridgeItems.splice(index, 1);
-  currentUser.save()
+  FridgeItem.findById(req.params.id)
+  .then(function(fridgeItem) {
+    if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
+    else {
+      fridgeItem.food = req.body.food;
+      fridgeItem.amount = req.body.amount;
+      fridgeItem.neighborhood = req.body.neighborhood;
+      fridgeItem.meetingLocation = req.body.meetingLocation;
+      return fridgeItem.save()
+    }
+  })
   .then(function(saved) {
     res.redirect('/fridge');
   }, function(err) {
@@ -103,16 +110,24 @@ router.delete('/:id', authenticate, function(req, res, next) {
   });
 });
 
-// // Index for Neighborhood
-// router.get('/fridge/atlanta', authenticate, function(req, res, next) {
-//   FridgeItem.find({fridgeItems})
-//   .then(function(fridgeItems) {
-//     res.render('/atlanta', { fridgeItems: fridgeItems, message: req.flash() });
-//   }, function(err) {
-//     return next(err);
-//   });
-// });
-
+// DESTROY
+router.delete('/:id', authenticate, function(req, res, next) {
+  FridgeItem.findById(req.params.id)
+  .then(function(fridgeItem) {
+    if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
+    var index = currentUser.fridgeItems.indexOf(fridgeItem);
+    currentUser.fridgeItems.splice(index, 1);
+    return currentUser.save();
+  })
+  .then(function(saved) {
+    return FridgeItem.findByIdAndRemove(req.params.id);
+  })
+  .then(function(removed) {
+    res.redirect('/fridge');
+  }, function(err) {
+    return next(err);
+  });
+});
 
 module.exports = router;
 

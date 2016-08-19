@@ -7,9 +7,17 @@ var UserSchema = new mongoose.Schema({
     email    : String,
     password : String
   },
-  fridgeItems : [FridgeItem.schema],
-  email : String
+  // fridgeItems : [FridgeItem.schema],
+  fridgeItems : [ { type : mongoose.Schema.Types.ObjectId, ref  : 'FridgeItem' } ]
 });
+
+var autoPopulate = function(next) {
+  this.populate('fridgeItems');
+  next();
+};
+
+UserSchema.pre('findOne', autoPopulate);
+UserSchema.pre('findById', autoPopulate);
 
 UserSchema.methods.encrypt = function(password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8));

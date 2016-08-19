@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-
+var User = require('../models/user')
 var FridgeItem = require('../models/fridge');
 
 /* GET home page. */
@@ -42,10 +42,15 @@ router.post('/login', function(req, res, next) {
 });
 
 // Neighborhood INDEX
-router.get('/atlanta', function(req, res, next) {
 
-    var fridgeItems = global.currentUser.fridgeItems;
-    res.render('fridge/atlanta', { fridgeItems: fridgeItems, message: req.flash() });
+router.get('/atlanta', function(req, res, next) {
+    FridgeItem.find({})
+    .then(function(fridgeItems) {
+    console.log(fridgeItems);
+    res.render('fridge/atlanta', { fridgeItems: fridgeItems });
+  }, function(err) {
+    return next(err);
+  });
 });
 
 // GET /logout
@@ -55,3 +60,5 @@ router.get('/logout', function(req, res, next) {
 });
 
 module.exports = router;
+
+
