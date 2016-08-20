@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var FridgeItem = require('../models/fridge');
+var User = require('../models/user');
+
 
 function makeError(res, message, status) {
   res.statusCode = status;
@@ -33,6 +35,7 @@ router.get('/new', authenticate, function(req, res, next) {
     food: '',
     amount: '',
     neighborhood: '',
+    contactInfo: '',
     meetingLocation: ''
   };
   res.render('fridge/new', { fridgeItem: fridgeItem, message: req.flash() });
@@ -55,6 +58,7 @@ router.post('/', authenticate, function(req, res, next) {
     food:     req.body.food,
     amount: req.body.amount,
     neighborhood: req.body.neighborhood,
+    contactInfo: req.body.contactInfo,
     meetingLocation: req.body.meetingLocation,
     owner: currentUser._id
   })
@@ -67,22 +71,12 @@ router.post('/', authenticate, function(req, res, next) {
   }, function(err) {
     return next(err);
   });
-
-  // Since a user's fridge items are an embedded document, we just need to push a new
-  // item to the user's list of fridge items and save the user.
-  // currentUser.fridgeItems.push(fridgeItem);
-  // currentUser.save()
-  // .then(function() {
-  //   res.redirect('/fridge');
-  // }, function(err) {
-  //   return next(err);
-  // });
 });
 
 // EDIT
 router.get('/:id/edit', authenticate, function(req, res, next) {
   FridgeItem.findById(req.params.id)
-  .then(function(FridgeItem) {
+  .then(function(fridgeItem) {
     if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
     res.render('fridge/edit', { fridgeItem: fridgeItem, message: req.flash() } );
   }, function(err) {
@@ -99,6 +93,7 @@ router.put('/:id', authenticate, function(req, res, next) {
       fridgeItem.food = req.body.food;
       fridgeItem.amount = req.body.amount;
       fridgeItem.neighborhood = req.body.neighborhood;
+      fridgeItem.contactInfo = req.body.contactInfo;
       fridgeItem.meetingLocation = req.body.meetingLocation;
       return fridgeItem.save()
     }

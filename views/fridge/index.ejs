@@ -18,7 +18,7 @@
         <h4>
               <form method="POST" action="/fridge/<%= fridgeItem._id %>?_method=DELETE">
                 <a href="/fridge/<%= fridgeItem._id %>">
-                  <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood + ' - ' + fridgeItem.meetingLocation %>
+                  <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %>
                 </a>
                 <button type="submit" class="btn btn-xs btn-danger">Delete</button>
               </form>

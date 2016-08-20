@@ -6,8 +6,11 @@ var FridgeItemSchema = new mongoose.Schema({
   food: { type: String, required: true },
   amount: { type: String, required: true },
   neighborhood: {type: String, required: true },
+  contactInfo: {type: String, required: true},
   meetingLocation: {type: String, required: false }
-});
+  },
+  { timestamps: true }
+);
 
 var autoPopulate = function(next) {
   this.populate('owner');
@@ -17,6 +20,22 @@ var autoPopulate = function(next) {
 FridgeItemSchema.pre('findOne', autoPopulate);
 FridgeItemSchema.pre('findById', autoPopulate);
 FridgeItemSchema.pre('find', autoPopulate);
+
+function date2String(date) {
+  var options = {
+    weekday: 'long', year: 'numeric', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+  };
+  return date.toLocaleDateString('en-US', options);
+}
+
+FridgeItemSchema.methods.getCreatedAt = function() {
+  return date2String(this.createdAt);
+};
+
+FridgeItemSchema.methods.getUpdatedAt = function() {
+  return date2String(this.updatedAt);
+};
 
 module.exports = mongoose.model('FridgeItem', FridgeItemSchema);
 

@@ -1,7 +1,7 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgb(174, 181, 190);
+  font-family: 'Montserrat', sans-serif;
   color: white;
 }
 
@@ -15,7 +15,7 @@ a:hover {
 }
 
 .jumbotron {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 .jumbotron.neighborhood {
@@ -47,9 +47,28 @@ h3 {
   font-size: 60px;
 }
 
+h4 {
+  font-size: 25px;
+  margin: 1em;
+}
+
+h4:first-letter{
+  text-transform: capitalize
+}
+
+.food {
+  text-transform: capitalize;
+}
+
+.foodInfo {
+  text-transform: capitalize;
+}
+
 nav {
   font-family: 'Montserrat', sans-serif;
 }
+
+.red-star { color: red; }
 
 
 

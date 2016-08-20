@@ -53,6 +53,17 @@ router.get('/atlanta', function(req, res, next) {
   });
 });
 
+// // // Neighborhood SHOW
+// router.get('/:id', function(req, res, next) {
+//   FridgeItem.findById(req.params.id)
+//   .then(function(fridgeItem) {
+//     if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
+//     res.render('fridge/neighboritem', { fridgeItem: fridgeItem } );
+//   }, function(err) {
+//     return next(err);
+//   });
+// });
+
 // GET /logout
 router.get('/logout', function(req, res, next) {
   req.logout();

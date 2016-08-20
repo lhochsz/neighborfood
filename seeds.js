@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var User = require('./models/user');
 var FridgeItem = require('./models/fridge');
-mongoose.Promise = require('bluebird')
+mongoose.Promise = require('bluebird');
 
 mongoose.connect('mongodb://localhost/fridge');
 
@@ -33,8 +33,8 @@ User.remove({})
   var promise1 = newUser.save();
 
   console.log('creating some fridge items...');
-  var butter  = new FridgeItem ({ owner: newUser._id, food: 'butter',  amount: '1 cup', neighborhood: 'Atlanta', meetingLocation: 'PCM' });
-  var pickles = new FridgeItem ({ owner: newUser._id, food: 'pickles',  amount: '1 cup', neighborhood: 'Atlanta', meetingLocation: 'PCM' });
+  var butter  = new FridgeItem ({ owner: newUser._id, food: 'butter',  amount: '1 cup', neighborhood: 'Atlanta', contactInfo: 'joe@foody.com', meetingLocation: 'PCM' });
+  var pickles = new FridgeItem ({ owner: newUser._id, food: 'pickles',  amount: '1 cup', neighborhood: 'Atlanta', contactInfo: 'joe@foody.com', meetingLocation: 'PCM' });
   var promise2 = FridgeItem.create([butter, pickles]);
 
   return [promise1, promise2];

@@ -12,17 +12,23 @@
   <main>
     <div class="fridgeItems">
       <div class="jumbotron show">
-        <h3><%= fridgeItem.food %></h3>
+        <h3 class="food"><%= fridgeItem.food %></h3>
       </div>
-      <p><b>Food: </b><%= fridgeItem.food %></p>
-      <p><b>ID: </b><%= fridgeItem._id %></p>
-      <p><b>Amount: </b><%= fridgeItem.amount %></p>
-      <p><b>Neighborhood: </b><%= fridgeItem.neighborhood %></p>
-      <p><b>Meeting Location: </b><%= fridgeItem.meetingLocation %></p>
+      <div class="foodInfo">
+        <p><b>Food: </b><%= fridgeItem.food %></p>
+      </div>
+        <p><b>ID: </b><%= fridgeItem._id %></p>
+        <p><b>Amount: </b><%= fridgeItem.amount %></p>
+        <p><b>Neighborhood: </b><%= fridgeItem.neighborhood %></p>
+        <p><b>My Contact Information: </b><%= fridgeItem.contactInfo %></p>
+        <p><b>Meeting Location: </b><%= fridgeItem.meetingLocation %></p>
+        <p><b>Created: </b><%= fridgeItem.getCreatedAt() %></p>
+        <p><b>Last Updated: </b><%= fridgeItem.getUpdatedAt() %></p>
     </div>
 
     <a href="/fridge" class="btn btn-success">Back</a>
     <a href="/fridge/<%= fridgeItem._id %>/edit" class="btn btn-info">Edit</a>
+
   </main>
 
   <footer>

@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group required">
   <label for="title">Food</label>
   <input type="text"
          class="form-control"
@@ -6,7 +6,7 @@
          value="<%= fridgeItem.food %>">
 </div>
 
-<div class="form-group">
+<div class="form-group required">
   <label for="title">Amount</label>
   <input type="text"
          class="form-control"
@@ -14,14 +14,23 @@
          value="<%= fridgeItem.amount %>">
 </div>
 
-<div class="form-group">
+<div class="form-group required">
   <label for="title">Neighborhood</label>
   <select type="text"
-          class="form-control"
+        class="form-control"
          name="neighborhood"
          value="<%= fridgeItem.neighborhood %>">
          <% include ../partials/neighborhoods %>
 </select>
+</div>
+
+
+<div class="form-group required">
+  <label for="title">My Contact Information</label>
+  <input type="text"
+         class="form-control"
+         name="contactInfo"
+         value="<%= fridgeItem.contactInfo %>">
 </div>
 
 <div class="form-group">
@@ -31,4 +40,5 @@
          name="meetingLocation"
          value="<%= fridgeItem.meetingLocation %>">
 </div>
+
 

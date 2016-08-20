@@ -11,7 +11,7 @@ a {
 
 .jumbotron {
   background-color: rgba(80, 122, 15, 0.8);
-  font: 100px 'Montserrat', sans-serif;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 .explain {
