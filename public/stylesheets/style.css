@@ -70,5 +70,14 @@ nav {
 
 .red-star { color: red; }
 
+.required label:after {
+  content: "*";
+  color: red;
+  display:inline;
+  font-size: 20px;
+}
 
-
+.asterisk {
+  color: red;
+  font-size: 12px;
+}

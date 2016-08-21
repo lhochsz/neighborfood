@@ -15,6 +15,16 @@
     </main>
   </div>
 
+<body>
+    <div class="search">
+      <form action="fridge/atlanta">
+        <input type="text" name="search" placeholder="Enter keyword here">
+        <input type="submit" name="Search"/>
+      </form>
+    </div>
+</body>
+
+
         <% fridgeItems.forEach(function(fridgeItem) { %>
         <h4>
             <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood + ' - Contact: ' + fridgeItem.contactInfo %>

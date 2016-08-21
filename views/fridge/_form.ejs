@@ -3,6 +3,7 @@
   <input type="text"
          class="form-control"
          name="food"
+         placeholder="What type of food are you sharing?"
          value="<%= fridgeItem.food %>">
 </div>
 
@@ -11,6 +12,7 @@
   <input type="text"
          class="form-control"
          name="amount"
+         placeholder="ex. 1 cup, 1 item, 3 tbsp"
          value="<%= fridgeItem.amount %>">
 </div>
 
@@ -19,6 +21,7 @@
   <select type="text"
         class="form-control"
          name="neighborhood"
+         placeholder="Select your neighborhood"
          value="<%= fridgeItem.neighborhood %>">
          <% include ../partials/neighborhoods %>
 </select>
@@ -30,6 +33,7 @@
   <input type="text"
          class="form-control"
          name="contactInfo"
+         placeholder="Your email or phone number"
          value="<%= fridgeItem.contactInfo %>">
 </div>
 
@@ -38,7 +42,10 @@
   <input type="text"
          class="form-control"
          name="meetingLocation"
+         placeholder="ex. 10th and Monroe"
          value="<%= fridgeItem.meetingLocation %>">
 </div>
+
+<p class="asterisk"> * required</p>
 
 
