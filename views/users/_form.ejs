@@ -3,7 +3,7 @@
   <input type="text"
          class="form-control"
          name="firstName"
-         value="<%= user.firstName %>">
+         value="<%= user.local.firstName %>">
 </div>
 
 <div class="form-group">
@@ -11,5 +11,14 @@
   <input type="text"
          class="form-control"
          name="lastName"
-         value="<%= user.lastName %>">
+         value="<%= user.local.lastName %>">
 </div>
+
+<div class="form-group">
+  <label for="email">Email</label>
+  <input type="text"
+         class="form-control"
+         name="email"
+         value="<%= user.local.email %>">
+</div>
+
