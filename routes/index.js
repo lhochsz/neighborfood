@@ -62,7 +62,7 @@ router.get('/atlanta', authenticate, function(req, res, next) {
       searchOptions.neighborhood = req.query.neighborhood;
     }
     if (req.query.food) {
-      searchOptions.food = req.query.food;
+      searchOptions.food = req.query.food.toLowerCase();
     }
 
     FridgeItem.find(searchOptions)
