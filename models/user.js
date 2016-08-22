@@ -4,11 +4,13 @@ var FridgeItem = require('./fridge');
 
 var UserSchema = new mongoose.Schema({
   local : {
-    firstName: String,
-    lastName: String,
     email    : String,
     password : String
   },
+
+  firstName: String,
+  lastName: String,
+
   // fridgeItems : [FridgeItem.schema],
   fridgeItems : [ { type : mongoose.Schema.Types.ObjectId, ref  : 'FridgeItem' } ]
 });

@@ -22,6 +22,8 @@
         <p><b>Neighborhood: </b><%= fridgeItem.neighborhood %></p>
         <p><b>My Contact Information: </b><%= fridgeItem.contactInfo %></p>
         <p><b>Meeting Location: </b><%= fridgeItem.meetingLocation %></p>
+        <p><b>Created: </b><%= fridgeItem.getCreatedAt() %></p>
+        <p><b>Last Updated: </b><%= fridgeItem.getUpdatedAt() %></p>
     </div>
 
     <a href="/fridge" class="btn btn-success">Back</a>

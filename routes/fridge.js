@@ -3,6 +3,7 @@ var router = express.Router();
 
 var FridgeItem = require('../models/fridge');
 var User = require('../models/user');
+var neighborhoods = require('../data/neighborhoods');
 
 
 function makeError(res, message, status) {
@@ -38,7 +39,9 @@ router.get('/new', authenticate, function(req, res, next) {
     contactInfo: '',
     meetingLocation: ''
   };
-  res.render('fridge/new', { fridgeItem: fridgeItem, message: req.flash() });
+  res.render('fridge/new', { fridgeItem: fridgeItem,
+                             neighborhoods: neighborhoods,
+                             message: req.flash() });
 });
 
 // SHOW
@@ -78,7 +81,9 @@ router.get('/:id/edit', authenticate, function(req, res, next) {
   FridgeItem.findById(req.params.id)
   .then(function(fridgeItem) {
     if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
-    res.render('fridge/edit', { fridgeItem: fridgeItem, message: req.flash() } );
+    res.render('fridge/edit', { fridgeItem: fridgeItem,
+                                neighborhoods: neighborhoods,
+                                message: req.flash() } );
   }, function(err) {
     return next(err);
   });
@@ -111,7 +116,7 @@ router.delete('/:id', authenticate, function(req, res, next) {
   .then(function(fridgeItem) {
     if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
     var index = currentUser.fridgeItems.indexOf(fridgeItem);
-    currentUser.fridgeItems.splice(index, 1);
+    currentUser.fridgeItems.splice(index, 0);
     return currentUser.save();
   })
   .then(function(saved) {

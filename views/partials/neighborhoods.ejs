@@ -1,94 +1,11 @@
             <option value="" disabled="disabled" selected="selected">Please select a neighborhood</option>
             <optgroup label="ITP">
-                <option value="Ansley Park">Ansley Park</option>
-                <option value="Avondale Estates">Avondale Estates</option>
-                <option value="Bankhead">Bankhead</option>
-                <option value="Briarcliff">Briarcliff</option>
-                <option value="Brookhaven">Brookhaven</option>
-                <option value="Brookwood Hills">Brookwood Hills</option>
-                <option value="Buckhead">Buckhead</option>
-                <option value="Cabbagetown">Cabbagetown</option>
-                <option value="Capitol View">Capitol View</option>
-                <option value="Candler Park">Candler Park</option>
-                <option value="Castleberry Hill">Castleberry Hill</option>
-                <option value="College Park">College Park</option>
-                <option value="Decatur">Decatur</option>
-                <option value="Downtown">Downtown</option>
-                <option value="East Atlanta">East Atlanta</option>
-                <option value="Edgewood">Edgewood</option>
-                <option value="Emory/North Druid Hills">Emory/North Druid Hills</option>
-                <option value="East Lake">East Lake</option>
-                <option value="Georgia Tech">Georgia Tech</option>
-                <option value="Grant Park">Grant Park</option>
-                <option value="Gresham Park">Gresham Park</option>
-                <option value="Hunter Hills">Hunter Hills</option>
-                <option value="Inman Park">Inman Park</option>
-                <option value="Just Us">Just Us</option>
-                <option value="Kirkwood">Kirkwood</option>
-                <option value="Lavista Park">Lavista Park</option>
-                <option value="Lenox">Lenox</option>
-                <option value="Mechanicsville">Mechanicsville</option>
-                <option value="Midtown">Midtown</option>
-                <option value="Morningside">Morningside</option>
-                <option value="North Decatur">North Decatur</option>
-                <option value="North Druid Hills">North Druid Hills</option>
-                <option value="Oakland City">Oakland City</option>
-                <option value="Old Fourth Ward">Old Fourth Ward</option>
-                <option value="Ormewood">Ormewood</option>
-                <option value="Peachtree Hills">Peachtree Hills</option>
-                <option value="Peoples Town">Peoples Town</option>
-                <option value="Piedmont Park">Piedmont Park</option>
-                <option value="Poncey-Highland">Poncey-Highland</option>
-                <option value="Reynoldstown">Reynoldstown</option>
-                <option value="Sherwood Forest">Sherwood Forest</option>
-                <option value="Summer Hill">Summer Hill</option>
-                <option value="Sweet Auburn">Sweet Auburn</option>
-                <option value="Underwood Hills">Underwood Hills</option>
-                <option value="Vine City">Vine City</option>
-                <option value="West End">West End</option>
-                <option value="West Side">West Side</option>
-                <option value="Westside Reservoir">Westside Reservoir</option>
-                <option value="Virginia Highland">Virginia Highland</option>
+                <% neighborhoods.ITP.forEach(function(hood) { %>
+                    <option value="<%= hood %>"><%= hood %></option>
+                <% }) %>
             </optgroup>
             <optgroup label="OTP">
-                <option value="Alpharetta">Alpharetta</option>
-                <option value="Buford">Buford</option>
-                <option value="Campbelton">Campbelton</option>
-                <option value="Cartersville">Cartersville</option>
-                <option value="Conyers">Conyers</option>
-                <option value="Cumming">Cumming</option>
-                <option value="Dallas">Dallas</option>
-                <option value="Douglasville">Douglasville</option>
-                <option value="Duluth">Duluth</option>
-                <option value="East Cobb">East Cobb</option>
-                <option value="Fairburn">Fairburn</option>
-                <option value="Fayetteville">Fayetteville</option>
-                <option value="Gainesville">Gainesville</option>
-                <option value="Hiram">Hiram</option>
-                <option value="Holly Springs">Holly Springs</option>
-                <option value="Johns Creek">Johns Creek</option>
-                <option value="Kennesaw">Kennesaw</option>
-                <option value="Lawrenceville">Lawrenceville</option>
-                <option value="Lithonia">Lithonia</option>
-                <option value="Mableton">Mableton</option>
-                <option value="Marietta">Marietta</option>
-                <option value="McDonough">McDonough</option>
-                <option value="Milton">Milton</option>
-                <option value="Morrow">Morrow</option>
-                <option value="Newnan">Newnan</option>
-                <option value="Norcross">Norcross</option>
-                <option value="Palmetto">Palmetto</option>
-                <option value="Peachtree City">Peachtree City</option>
-                <option value="Powder Springs">Powder Springs</option>
-                <option value="Redan">Redan</option>
-                <option value="Riverdale">Riverdale</option>
-                <option value="Roswell">Roswell</option>
-                <option value="Sandy Springs">Sandy Springs</option>
-                <option value="Sharpsburg">Sharpsburg</option>
-                <option value="Smyrna">Smyrna</option>
-                <option value="Snellville">Snellville</option>
-                <option value="Stockbridge">Stockbridge</option>
-                <option value="Stone Mountain">Stone Mountain</option>
-                <option value="Tucker">Tucket</option>
-                <option value="Union City">Union City</option>
+                <% neighborhoods.OTP.forEach(function(hood) { %>
+                    <option value="<%= hood %>"><%= hood %></option>
+                <% }) %>
             </optgroup>

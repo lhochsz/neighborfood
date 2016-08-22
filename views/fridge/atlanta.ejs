@@ -17,19 +17,34 @@
 
 <body>
     <div class="search">
-      <form action="fridge/atlanta">
-        <input type="text" name="search" placeholder="Enter keyword here">
-        <input type="submit" name="Search"/>
+      <form method="get" action="/atlanta" id="search">
+        <div class="form-group">
+          <label>Neighborhood</label>
+          <input type="text"
+            class="form-control"
+            name="neighborhood"
+            value="<%= searchOptions.neighborhood %>">
+          <label>Food</label>
+          <input type="text"
+            class="form-control"
+            name="food"
+            value="<%= searchOptions.food %>">
+          <button type="submit" class="btn btn-default">Search</button>
+        </div>
       </form>
     </div>
 </body>
 
         <% fridgeItems.forEach(function(fridgeItem) { %>
         <h4>
-            <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %>
-            <b>Contact: <a href="mailto:<%= fridgeItem.contactInfo %>"> <%= fridgeItem.contactInfo %></a>
+            <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood + ' - ' %>
+            <b>Contact: <%= fridgeItem.owner.firstName %> @ <a href="mailto:<%= fridgeItem.contactInfo %>"> <%= fridgeItem.contactInfo %></a>
         </h4>
       <% }); %>
+
+      <% if (fridgeItems.length === 0) { %>
+        <h4>There are not items to show</h4>
+      <% } %>
           <a href="/fridge/new" class="btn btn-primary">New</a>
 
 

@@ -54,4 +54,6 @@ User.remove({})
     console.log(fridgeItem);
   });
   quit();
+}, function(err) {
+  return handleError(err);
 });
