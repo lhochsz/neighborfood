@@ -16,6 +16,7 @@
   </div>
 
 <body>
+    <div class="col-sm-6">
     <div class="search">
       <form method="get" action="/atlanta" id="search">
         <div class="form-group">
@@ -27,33 +28,40 @@
                      value selected="<%= searchOptions.neighborhood %>">
                      <% include ../partials/neighborhoods %>
             </select>
-</div>
+        </div>
           <label>Food</label>
           <input type="text"
             class="form-control"
             name="food"
             value="<%= searchOptions.food %>">
-          <button type="submit" class="btn btn-default">Search</button>
+          <br>
+          <button type="submit" class="btn btn-info">Search</button>
+          </form>
         </div>
-      </form>
     </div>
+    <div class="col-sm-4">
+    </div>
+
 </body>
-
+    <div class="col-sm-12">
         <% fridgeItems.forEach(function(fridgeItem) { %>
-        <h4>
-            <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood + ' - ' %>
-            <b>Contact: <%= fridgeItem.owner.firstName %> @ <a href="mailto:<%= fridgeItem.contactInfo %>"> <%= fridgeItem.contactInfo %></a>
-        </h4>
-      <% }); %>
+            <h4>
+              <div class="itemBackground">
+                <p class="updated"> Updated: <%= fridgeItem.getUpdatedAt() %></p>
+                <p class="itemInfo"> <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %> </p>
+                <p class="contact">Contact: <%= fridgeItem.owner.firstName %> @ <a href="mailto:<%= fridgeItem.contactInfo %>"> <%= fridgeItem.contactInfo %></a></p>
+              </div>
+            </h4>
+          <% }); %>
 
-      <% if (fridgeItems.length === 0) { %>
-        <h4>There are no items to show.</h4>
-      <% } %>
+          <% if (fridgeItems.length === 0) { %>
+            <h4>There are no items to show.</h4>
+          <% } %>
           <a href="/fridge/new" class="btn btn-primary">New</a>
+          <footer>
+            <% include ../partials/footer %>
+          </footer>
+        </div>
 
-
-  <footer>
-    <% include ../partials/footer %>
-  </footer>
 </body>
 </html>

@@ -16,12 +16,14 @@
         <p>Add your leftovers or extra food below to share with your community.</p>
       </div>
       <% fridgeItems.forEach(function(fridgeItem) { %>
-        <h4>
+        <h4 class="fridgeIndexCaptialize">
               <form method="POST" action="/fridge/<%= fridgeItem._id %>?_method=DELETE">
-                <a href="/fridge/<%= fridgeItem._id %>">
-                  <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %>
-                </a>
-                <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                <div class="itemBackground">
+                  <a href="/fridge/<%= fridgeItem._id %>">
+                    <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %>
+                  </a>
+                  <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                </div>
               </form>
         </h4>
       <% }); %>

@@ -30,6 +30,8 @@ User.remove({})
   var newUser = new User();
   newUser.local.email    = 'joe@foody.com';
   newUser.local.password = newUser.encrypt('test1234');
+  newUser.firstName = 'Joe';
+  newUser.lastName = 'Foody';
   var promise1 = newUser.save();
 
   console.log('creating some fridge items...');
