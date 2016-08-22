@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var FridgeItem = require('../models/fridge');
+var FridgeItem = require('../models/user');
 
 function makeError(res, message, status) {
   res.statusCode = status;

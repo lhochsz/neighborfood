@@ -26,7 +26,8 @@
 
         <% fridgeItems.forEach(function(fridgeItem) { %>
         <h4>
-            <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood + ' - Contact: ' currentUser.local.firstName + ' - ' + fridgeItem.contactInfo %>
+            <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %>
+            <b>Contact: <a href="mailto:<%= fridgeItem.contactInfo %>"> <%= fridgeItem.contactInfo %></a>
         </h4>
       <% }); %>
           <a href="/fridge/new" class="btn btn-primary">New</a>
