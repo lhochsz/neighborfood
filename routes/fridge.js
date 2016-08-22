@@ -58,7 +58,7 @@ router.get('/:id', authenticate, function(req, res, next) {
 // CREATE
 router.post('/', authenticate, function(req, res, next) {
   FridgeItem.create({
-    food:     req.body.food,
+    food:     req.body.food.toLowerCase(),
     amount: req.body.amount,
     neighborhood: req.body.neighborhood,
     contactInfo: req.body.contactInfo,

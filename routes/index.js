@@ -5,6 +5,17 @@ var User = require('../models/user')
 var FridgeItem = require('../models/fridge');
 var neighborhoods = require('../data/neighborhoods');
 
+
+function authenticate(req, res, next) {
+  if(!req.isAuthenticated()) {
+    req.flash('error', 'Not allowed');
+    res.redirect('/');
+  }
+  else {
+    next();
+  }
+}
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: "NeighborFood", message: req.flash() });
@@ -44,7 +55,7 @@ router.post('/login', function(req, res, next) {
 
 // Neighborhood INDEX
 
-router.get('/atlanta', function(req, res, next) {
+router.get('/atlanta', authenticate, function(req, res, next) {
     console.log('req.query:', req.query);
     var searchOptions = {};
     if (req.query.neighborhood) {
@@ -64,52 +75,6 @@ router.get('/atlanta', function(req, res, next) {
     return next(err);
   });
 });
-
-// Neighborhood Search
-// router.post('/atlanta', authenticate, function(req, res, next) {
-//   var currentUser = req.user;
-//   var keywords = [req.body.keywords];
-//   var neighborhood = req.body.neighborhood;
-//   if (food.length > 0) {
-//   db.find.({food: food})
-//   .Radius(radius)
-//   .WhereKeywords(keywords)
-//   .WhereLocation({
-//     city: city,
-//     state: state
-//   })
-//   .Limit(limit)
-//   .SortBy("date")
-//     .Search(function (results) {
-//     res.render('atlanta/search', { jobs: results.results, message: req.flash() });
-//     // console.log(results.results[0].jobkey);
-//   },
-//     function (error) {
-
-//     console.log(error);
-//   });
-//   }
-//   else {
-//   api.JobSearch()
-//   .Radius(radius)
-//   .WhereLocation({
-//     city: city,
-//     state: state
-//   })
-//   .Limit(limit)
-//   .SortBy("date")
-//   .UserIP("1.2.3.4")
-//   .UserAgent("Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36")
-//   .Search(function (results) {
-//     res.render('jobs/search', { jobs: results.results, message: req.flash() });
-//     // console.log(results.results[0].jobkey);
-//   },
-//     function (error) {
-
-//     console.log(error);
-//   });
-//   };
-// });
 
 // GET /logout
 router.get('/logout', function(req, res, next) {
