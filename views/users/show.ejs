@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div class="jumbotron userProfile">
+          <h1>MyProfile</h1>
+    </div>
+    <div>
+      <p><b>Email: </b><%= user.local.email %></p>
+      <p><b>ID: </b><%= user._id %></p>
+      <p><b>NAME: </b><%= user.local.firstName %> <%= user.local.lastName %></p>
+    </div>
+      <a href="/jobs" class="btn btn-primary">Back</a>
+      <a href="/users/<%=user._id%>/edit" class="btn btn-danger">Edit</a>
+  </main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+</body>
+</html>

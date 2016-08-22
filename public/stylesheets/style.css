@@ -43,6 +43,18 @@ a:hover {
   background-size: 100%;
 }
 
+.jumbotron.userProfile {
+  background: #000 url("/images/carrots.jpeg") center center;
+  background-size: 100%;
+  padding-left: 2em;
+}
+
+.jumbotron.editUser {
+  background: #000 url("/images/eggs.jpeg") center center;
+  background-size: 100%;
+  padding-left: 2em;
+}
+
 h3 {
   font-size: 60px;
 }
@@ -62,6 +74,10 @@ h4:first-letter{
 
 .foodInfo {
   text-transform: capitalize;
+}
+
+#new {
+  margin-left: 1.5em;
 }
 
 nav {

@@ -4,6 +4,8 @@ var FridgeItem = require('./fridge');
 
 var UserSchema = new mongoose.Schema({
   local : {
+    firstName: String,
+    lastName: String,
     email    : String,
     password : String
   },

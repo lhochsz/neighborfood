@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div class="jumbotron editUser">
+      <h3>Edit My Info</h3>
+    </div>
+    <form class="user-form" action="/users/<%=currentUser._id%>?_method=PUT" method="post">
+      <% include _form %>
+      <a href="/users/<%=user._id%>" class="btn btn-primary">Back</a>
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
+  </main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+</body>
+</html>

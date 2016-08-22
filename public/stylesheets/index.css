@@ -12,7 +12,14 @@ a {
 
 .jumbotron {
   background-color: rgba(80, 122, 15, 0.8);
+}
+
+#neighborfood {
   font-family: 'Cabin Sketch', cursive;
+}
+
+#signUp {
+  font: 'Montserrat', sans-serif;
 }
 
 .explain {
