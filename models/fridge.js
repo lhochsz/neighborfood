@@ -6,7 +6,6 @@ var FridgeItemSchema = new mongoose.Schema({
   food: { type: String, required: true },
   amount: { type: String, required: true },
   neighborhood: {type: String, required: true },
-  contactInfo: {type: String, required: true},
   meetingLocation: {type: String, required: false }
   },
   { timestamps: true }
