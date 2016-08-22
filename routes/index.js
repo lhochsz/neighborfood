@@ -65,7 +65,7 @@ router.get('/atlanta', authenticate, function(req, res, next) {
       searchOptions.food = req.query.food.toLowerCase();
     }
 
-    FridgeItem.find(searchOptions)
+    FridgeItem.find(searchOptions).sort('-createdAt')
     .then(function(fridgeItems) {
     console.log('fridgeItems:', fridgeItems);
     res.render('fridge/atlanta', { fridgeItems: fridgeItems,
@@ -75,6 +75,7 @@ router.get('/atlanta', authenticate, function(req, res, next) {
     return next(err);
   });
 });
+
 
 // GET /logout
 router.get('/logout', function(req, res, next) {
