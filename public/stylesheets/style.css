@@ -19,7 +19,7 @@ a:hover {
 }
 
 .jumbotron.neighborhood {
-  background: #000 url("/images/cucumbers.jpeg") center center;
+  background: #000 url("/images/blueberries.jpeg") center center;
   background-size: 100%;
 }
 
@@ -34,7 +34,7 @@ a:hover {
 }
 
 .jumbotron.new {
-  background: #000 url("/images/blueberries.jpeg") center center;
+  background: #000 url("/images/cucumbers.jpeg") center center;
   background-size: 100%;
 }
 
