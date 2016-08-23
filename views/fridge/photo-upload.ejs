@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div class="jumbotron new">
+      <h3>New Photo</h3>
+    </div>
+
+      <form id        =  "uploadForm"
+           enctype   =  "multipart/form-data"
+           action    =  "/fridge/:id/photo-upload"
+           method    =  "post"
+      >
+      <input type="file" name="userPhoto" />
+      <input type="submit" value="Upload Image" name="submit">
+      </form>
+
+      </main>
+    </div>
+
+</body>
+</html>

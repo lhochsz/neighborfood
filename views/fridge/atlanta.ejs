@@ -53,6 +53,9 @@
                   <% if (fridgeItem.meetingLocation) { %>
                     <p class="meeting"> Meeting Location: <%= fridgeItem.meetingLocation%> </p>
                   <% } %>
+                  <% if (fridgeItem.photo) { %>
+                    <img src="<%= fridgeItem.photo %>">
+                  <% } %>
               </div>
             </h4>
           <% }); %>

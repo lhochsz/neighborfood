@@ -9,6 +9,7 @@ var methodOverride = require('method-override');
 var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
+var multer       = require('multer');
 mongoose.Promise = require('bluebird')
 
 var routes = require('./routes/index');
@@ -29,6 +30,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(multer({ dest: './uploads/' }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -39,6 +41,11 @@ app.use(session({ secret: 'WDI Rocks!',
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+
+// app.get('/', photos.list);
+// app.get('/upload', photos.form);
+// app.post('/upload', photos.submit(app.get('photos')));
+// app.get('/photo/:id/download', photos.download(app.get('photos')));
 
 require('./config/passport/passport')(passport);
 

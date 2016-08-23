@@ -36,7 +36,8 @@ router.get('/new', authenticate, function(req, res, next) {
     food: '',
     amount: '',
     neighborhood: '',
-    meetingLocation: ''
+    meetingLocation: '',
+    photo: '',
   };
   res.render('fridge/new', { fridgeItem: fridgeItem,
                              neighborhoods: neighborhoods,
@@ -61,9 +62,11 @@ router.post('/', authenticate, function(req, res, next) {
     amount: req.body.amount,
     neighborhood: req.body.neighborhood,
     meetingLocation: req.body.meetingLocation,
-    owner: currentUser._id
+    photo: req.body.photo,
+    owner: currentUser._id,
   })
   .then(function(item) {
+    console.log(item.photo);
     currentUser.fridgeItems.push(item);
     return currentUser.save();
   })
@@ -97,6 +100,7 @@ router.put('/:id', authenticate, function(req, res, next) {
       fridgeItem.amount = req.body.amount;
       fridgeItem.neighborhood = req.body.neighborhood;
       fridgeItem.meetingLocation = req.body.meetingLocation;
+      fridgeItem.photo = req.body.photo;
       return fridgeItem.save()
     }
   })
