@@ -40,6 +40,15 @@
 </div>
 
 <div class="form-group">
+  <label for="title">Ingredients</label>
+  <input type="text"
+         class="form-control"
+         name="ingredients"
+         placeholder="ex. Cheese, nuts, flour, sausage"
+         value="<%= fridgeItem.ingredients %>">
+</div>
+
+<div class="form-group">
   <label for="title">Photo</label>
   <input type="text"
          class="form-control"
@@ -47,7 +56,9 @@
          placeholder="Insert URL here"
          value="<%= fridgeItem.photo %>">
 </div>
-
+<div class="imgsites">
+  <b>Upload an image via </b><a href="http://www.imgur.com/upload" target="_blank">Imgur</a>
+</div>
 
 <p class="asterisk"> * required</p>
 

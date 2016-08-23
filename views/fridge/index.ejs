@@ -19,25 +19,29 @@
         <h4 class="fridgeIndexCaptialize">
               <form method="POST" action="/fridge/<%= fridgeItem._id %>?_method=DELETE">
                 <div class="itemBackground">
-                <p class="updated"> Updated: <%= fridgeItem.getUpdatedAt() %></p>
-                  <div>
-                    <ul>
-                      <li>
-                        <a class="fridgeFood" href="/fridge/<%= fridgeItem._id %>">
-                          <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %>
-                        </a>
-                          <ul>
-                          <li class="dropdownli"><button class="btn btn-xs btn-info"><a href="/fridge/<%= fridgeItem._id %>">Show</a></button></li>
-                          <li class="dropdownli"><button class="btn btn-xs btn-info"><a href="/fridge/<%= fridgeItem._id %>/edit">Edit</a></button></li>
-                          <li class="dropdownli"><button type="submit" class="btn btn-xs btn-danger">Delete</button></li>
+                    <p class="updated"> Updated: <%= fridgeItem.getUpdatedAt() %></p>
+                      <div>
+                        <ul>
+                          <li>
+                            <a class="fridgeFood" href="/fridge/<%= fridgeItem._id %>">
+                              <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %>
+                            </a>
+                              <ul>
+                              <li class="dropdownli"><button class="btn btn-xs btn-info"><a href="/fridge/<%= fridgeItem._id %>">Show</a></button></li>
+                              <li class="dropdownli"><button class="btn btn-xs btn-info"><a href="/fridge/<%= fridgeItem._id %>/edit">Edit</a></button></li>
+                              <li class="dropdownli"><button type="submit" class="btn btn-xs btn-danger">Delete</button></li>
+                              </ul>
+                            </li>
                           </ul>
-                        </li>
-                      </ul>
-                    </div>
-                      <img src="<%= fridgeItem.photo %>">
+                        </div>
+                        <% if (fridgeItem.ingredients) { %>
+                          <p class="indexIngredients"> Ingredients: <%= fridgeItem.ingredients %> </p>
+                        <% } %>
+                        <p class="image"><img src="<%= fridgeItem.photo %>"><p>
                 </div>
               </form>
         </h4>
+        </p>
       <% }); %>
     </div>
     <a href="/fridge/new" id="new" class="btn btn-success">Add New Item</a>

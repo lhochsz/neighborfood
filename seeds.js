@@ -35,8 +35,8 @@ User.remove({})
   var promise1 = newUser.save();
 
   console.log('creating some fridge items...');
-  var butter  = new FridgeItem ({ owner: newUser._id, food: 'butter',  amount: '1 cup', neighborhood: 'Midtown', meetingLocation: 'PCM', photo: 'http://toninospizzaandpasta.com/wp-content/uploads/2014/04/pizza-page.png' });
-  var pickles = new FridgeItem ({ owner: newUser._id, food: 'pickles',  amount: '1 cup', neighborhood: 'Midtown', meetingLocation: 'PCM', photo: 'http://toninospizzaandpasta.com/wp-content/uploads/2014/04/pizza-page.png' });
+  var butter  = new FridgeItem ({ owner: newUser._id, food: 'butter',  amount: '1 cup', neighborhood: 'Midtown', meetingLocation: 'PCM', photo: 'http://img.foodnetwork.com/FOOD/2012/06/15/HE_butter_s4x3_lead.jpg' });
+  var pickles = new FridgeItem ({ owner: newUser._id, food: 'pickles',  amount: '1 cup', neighborhood: 'Midtown', meetingLocation: 'PCM', photo: 'http://eatyourworld.com/images/staff_food_entries/pickles.jpg' });
   var promise2 = FridgeItem.create([butter, pickles]);
 
   return [promise1, promise2];

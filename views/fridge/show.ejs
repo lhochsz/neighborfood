@@ -21,13 +21,15 @@
         <p><b>Amount: </b><%= fridgeItem.amount %></p>
         <p><b>Neighborhood: </b><%= fridgeItem.neighborhood %></p>
         <p><b>Meeting Location: </b><%= fridgeItem.meetingLocation %></p>
+        <p><b>Ingredients: </b><%= fridgeItem.ingredients %></p>
         <p><b>Created: </b><%= fridgeItem.getCreatedAt() %></p>
         <p><b>Last Updated: </b><%= fridgeItem.getUpdatedAt() %></p>
+        <img src="<%= fridgeItem.photo %>">
+
     </div>
 
     <a href="/fridge" class="btn btn-success">Back</a>
     <a href="/fridge/<%= fridgeItem._id %>/edit" class="btn btn-info">Edit</a>
-    <a href="/fridge/<%= fridgeItem._id %>/photo-upload" class="btn btn-info">Upload Photo</a>
 
   </main>
 
