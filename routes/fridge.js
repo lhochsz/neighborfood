@@ -42,6 +42,7 @@ router.get('/new', authenticate, function(req, res, next) {
   };
   res.render('fridge/new', { fridgeItem: fridgeItem,
                              neighborhoods: neighborhoods,
+                             selected: false,
                              message: req.flash() });
 });
 
@@ -86,6 +87,7 @@ router.get('/:id/edit', authenticate, function(req, res, next) {
     if (!fridgeItem) return next(makeError(res, 'Document not found', 404));
     res.render('fridge/edit', { fridgeItem: fridgeItem,
                                 neighborhoods: neighborhoods,
+                                selected: fridgeItem.neighborhood,
                                 message: req.flash() } );
   }, function(err) {
     return next(err);

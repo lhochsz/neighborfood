@@ -62,14 +62,16 @@ router.get('/atlanta', authenticate, function(req, res, next) {
       searchOptions.neighborhood = req.query.neighborhood;
     }
     if (req.query.food) {
-      searchOptions.food = req.query.food.toLowerCase();
+      // searchOptions.food = req.query.food.toLowerCase();
+      searchOptions.food = { '$regex' : req.query.food, '$options' : 'i' };
     }
 
     FridgeItem.find(searchOptions).sort('-createdAt')
     .then(function(fridgeItems) {
     console.log('fridgeItems:', fridgeItems);
     res.render('fridge/atlanta', { fridgeItems: fridgeItems,
-                                   searchOptions: searchOptions,
+                                   searchOptions: req.query,
+                                   selected: req.query.neighborhood,
                                    neighborhoods: neighborhoods });
   }, function(err) {
     return next(err);

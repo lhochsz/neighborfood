@@ -12,38 +12,38 @@
   <div class="jumbotron neighborhood">
     <main>
         <h3>Neighborhood</h3>
+        <a href="/fridge/new" class="btn btn-success" class="new">Add New Item</a>
     </main>
   </div>
 
 <body>
-    <div class="col-sm-6">
     <div class="search">
       <form method="get" action="/atlanta" id="search">
         <div class="form-group">
-          <label>Neighborhood</label>
+          <h5>Search</h5>
+          <label>Select Your Neighborhood</label>
               <select type="text"
                     class="form-control"
                      name="neighborhood"
-                     placeholder="Select your neighborhood"
+                     placeholder="--- Select --- "
                      value selected="<%= searchOptions.neighborhood %>">
                      <% include ../partials/neighborhoods %>
             </select>
-        </div>
-          <label>Food</label>
-          <input type="text"
-            class="form-control"
-            name="food"
-            value="<%= searchOptions.food %>">
+            <br>
+          <label>Find a Food</label>
+              <input type="text"
+                class="form-control"
+                name="food"
+                value="<%= searchOptions.food %>">
           <br>
           <button type="submit" class="btn btn-info">Search</button>
           </form>
         </div>
     </div>
-    <div class="col-sm-4">
-    </div>
 
 </body>
     <div class="col-sm-12">
+
         <% fridgeItems.forEach(function(fridgeItem) { %>
             <h4>
               <div class="itemBackground">
@@ -69,7 +69,6 @@
           <% if (fridgeItems.length === 0) { %>
             <h4>There are no items to show.</h4>
           <% } %>
-          <a href="/fridge/new" class="btn btn-primary">New</a>
           <footer>
             <% include ../partials/footer %>
           </footer>

@@ -13,17 +13,18 @@
     <div class="jumbotron userProfile">
           <h1>MyProfile</h1>
     </div>
-    <div>
-      <p><b>NAME: </b><%=  user.firstName %> <%= user.lastName %></p>
-      <p><b>Email: </b><%= user.local.email %></p>
-      <p><b>ID: </b><%= user._id %></p>
-    </div>
-      <a href="/jobs" class="btn btn-primary">Back</a>
-      <a href="/users/<%=user._id%>/edit" class="btn btn-danger">Edit</a>
+
+      <div class="profile">
+        <p><b>NAME: </b><%=  user.firstName %> <%= user.lastName %></p>
+        <p><b>Email: </b><%= user.local.email %></p>
+      </div>
+        <a href="/" class="btn btn-primary">Back</a>
+        <a href="/users/<%=user._id%>/edit" class="btn btn-danger">Edit</a>
   </main>
 
 <footer>
   <% include ../partials/footer %>
 </footer>
+
 </body>
 </html>

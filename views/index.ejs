@@ -21,7 +21,11 @@
         <h1>NeighborFood</h1>
         <p>For when you need a cup of sugar.</p>
       </div>
-      <p><a id="signUp" class="btn btn-primary btn-lg" href="/signup" role="button">SIGN UP</a></p>
+
+      <% if (!currentUser) { %>
+        <p><a class="btn btn-primary btn-lg" href="/signup" role="button">SIGN UP</a></p>
+      <% } %>
+
   </main>
 
   <div class ="explain">

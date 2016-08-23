@@ -1,11 +1,12 @@
-            <option value="" disabled="disabled" selected="selected">Please select a neighborhood</option>
+            <option value="" disabled="disabled"
+              <%= !selected ? 'selected="selected"' : '' %> >--- Select ---</option>
             <optgroup label="ITP">
                 <% neighborhoods.ITP.forEach(function(hood) { %>
-                    <option value="<%= hood %>"><%= hood %></option>
+                    <option value="<%= hood %>" <%= selected === hood ? 'selected="selected"' : '' %> ><%= hood %></option>
                 <% }) %>
             </optgroup>
             <optgroup label="OTP">
                 <% neighborhoods.OTP.forEach(function(hood) { %>
-                    <option value="<%= hood %>"><%= hood %></option>
+                    <option value="<%= hood %>" <%= selected === hood ? 'selected="selected"' : '' %> ><%= hood %></option>
                 <% }) %>
             </optgroup>

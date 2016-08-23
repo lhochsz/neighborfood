@@ -13,8 +13,13 @@
     <div>
       <div class="jumbotron index">
         <h3>MyFridge</h3>
-        <p>Add your leftovers or extra food below to share with your community.</p>
+        <a href="/fridge/new" class="btn btn-success" class="new">ADD NEW ITEM</a>
       </div>
+
+          <div class="indexExplain">
+            <p>Add your leftovers or extra food items below to share with your community.  Then head to the Neighborhood tab to see what your neighbors are offering!</p>
+          </div>
+
       <% fridgeItems.forEach(function(fridgeItem) { %>
         <h4 class="fridgeIndexCaptialize">
               <form method="POST" action="/fridge/<%= fridgeItem._id %>?_method=DELETE">
@@ -44,7 +49,6 @@
         </p>
       <% }); %>
     </div>
-    <a href="/fridge/new" id="new" class="btn btn-success">Add New Item</a>
   </main>
 
   <footer>
