@@ -50,6 +50,9 @@
                 <p class="updated"> Updated: <%= fridgeItem.getUpdatedAt() %></p>
                 <p class="itemInfo"> <%= fridgeItem.food + ' - ' + fridgeItem.amount + ' - ' + fridgeItem.neighborhood %> </p>
                 <p class="contact">Contact <%= fridgeItem.owner.firstName %> : <a href="mailto:<%= fridgeItem.owner.local.email %>"> <%= fridgeItem.owner.local.email %></a></p>
+                  <% if (fridgeItem.meetingLocation) { %>
+                    <p class="meeting"> Meeting Location: <%= fridgeItem.meetingLocation%> </p>
+                  <% } %>
               </div>
             </h4>
           <% }); %>

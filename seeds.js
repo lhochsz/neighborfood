@@ -35,8 +35,8 @@ User.remove({})
   var promise1 = newUser.save();
 
   console.log('creating some fridge items...');
-  var butter  = new FridgeItem ({ owner: newUser._id, food: 'butter',  amount: '1 cup', neighborhood: 'Atlanta', meetingLocation: 'PCM' });
-  var pickles = new FridgeItem ({ owner: newUser._id, food: 'pickles',  amount: '1 cup', neighborhood: 'Atlanta', meetingLocation: 'PCM' });
+  var butter  = new FridgeItem ({ owner: newUser._id, food: 'butter',  amount: '1 cup', neighborhood: 'Midtown', meetingLocation: 'PCM' });
+  var pickles = new FridgeItem ({ owner: newUser._id, food: 'pickles',  amount: '1 cup', neighborhood: 'Midtown', meetingLocation: 'PCM' });
   var promise2 = FridgeItem.create([butter, pickles]);
 
   return [promise1, promise2];

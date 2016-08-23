@@ -5,12 +5,7 @@ body {
   color: white;
 }
 
-a {
-  color: rgb(80, 122, 15);
-}
-
 a:hover {
-  color: rgb(70, 218, 244);
   text-decoration: none;
 }
 
@@ -118,3 +113,47 @@ nav {
 .contact {
   font-size: 15px;
 }
+
+.meeting {
+  font-size: 15px;
+}
+
+li.dropdownli a {
+  font-size: 12px;
+  display: inline;
+  color: white;
+}
+
+a.fridgeFood {
+    text-decoration: none;
+    color: rgb(80, 122, 15);
+    font-size: 20px;
+    padding: 15px;
+    display:inline;
+}
+
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline;
+}
+
+ul li:hover ul {
+  display: inline;
+  background-color: white;
+}
+
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+
+ul li ul li {
+  display: inline;
+}
+ul li ul li a {display:inline !important;}
