@@ -42,11 +42,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-// app.get('/', photos.list);
-// app.get('/upload', photos.form);
-// app.post('/upload', photos.submit(app.get('photos')));
-// app.get('/photo/:id/download', photos.download(app.get('photos')));
-
 require('./config/passport/passport')(passport);
 
 // This middleware will allow us to use the currentUser in our views and routes.
@@ -89,6 +84,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
