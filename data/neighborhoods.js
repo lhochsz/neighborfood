@@ -2,7 +2,7 @@ var ITP = [
   "Ansley Park", "Avondale Estates", "Bankhead", "Briarcliff",
   "Brookhaven", "Brookwood Hills", "Buckhead", "Cabbagetown",
   "Capitol View", "Candler Park", "Castleberry Hill", "College Park",
-  "Decatur", "Downtown", "East Atlanta", "Edgewood",
+  "Decatur", "Downtown", "East Atlanta", "East Point", "Edgewood",
   "Emory/North Druid Hills", "East Lake", "Georgia Tech", "Grant Park",
   "Gresham Park", "Hunter Hills", "Inman Park", "Just Us", "Kirkwood",
   "Lavista Park", "Lenox", "Mechanicsville", "Midtown", "Morningside",
