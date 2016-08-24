@@ -41,23 +41,11 @@ router.put('/:id', authenticate, function(req, res, next) {
     console.log('about to save currentUser:', currentUser);
     currentUser.save()
     .then(function(saved) {
-      // res.render('./users/show', { user: currentUser, message: req.flash() } );
       res.redirect('/users/' + saved._id);
     }, function(err) {
       return next(err);
     });
   };
-});
-
-//DESTROY
-router.delete('/:id', authenticate, function(req, res, next) {
-  var currentUser = req.user;
-  User.findByIdAndRemove(req.params.id)
-  .then(function() {
-    res.redirect('/users');
-  }, function(err) {
-    return next(err);
-  });
 });
 
 module.exports = router;

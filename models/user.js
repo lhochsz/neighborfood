@@ -11,7 +11,6 @@ var UserSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
 
-  // fridgeItems : [FridgeItem.schema],
   fridgeItems : [ { type : mongoose.Schema.Types.ObjectId, ref  : 'FridgeItem' } ]
 });
 
