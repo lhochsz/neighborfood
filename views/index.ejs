@@ -19,20 +19,49 @@
     <div class="jumbotron">
       <div id="neighborfood">
         <h1>NeighborFood</h1>
-        <p>For when you need a cup of sugar.</p>
+        <p class="sugar">For when you need a cup of sugar.</p>
       </div>
 
       <% if (!currentUser) { %>
-        <p><a class="btn btn-primary btn-lg" href="/signup" role="button">SIGN UP</a></p>
+        <b><a class="btn btn-primary btn-lg" href="/signup" role="button">SIGN UP</a></b>
+        <b><a class="btn btn-primary btn-lg" href="/login" role="button">LOGIN</a></b>
+
       <% } %>
 
   </main>
+      <% if (currentUser) { %>
+        <div class="loggedIn">
+          <div class="myfridge">
+            <div class="col-sm-6">
+              <div class="jumbotron myfridge">
+                <p><a class="green" href='/fridge'>MyFridge</a></p>
+                <p>Look in your refrigerator or pantry.</p>
+                <p>Anything you won't use before it goes bad?</p>
+                <p>Head back to your MyFridge tab to update your items.</p>
+                <p>Your neighbors will email you to claim it!</p>
+              </div>
+            </div>
+          </div>
+          <div class="myneighborhood">
+            <div class="col-sm-6">
+              <div class="jumbotron neighborhood">
+                <p><a class="green" href='/atlanta'>Neighborhood</a></p>
+                <p>Check in to see what's new in the Neighborhood tab.</p>
+                <p>Look up free food items and full prepared meals all over Atlanta.</p>
+                <p>It's time to get cookin'!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% } %>
 
-  <div class ="explain">
-    <p>Missing an ingredient to complete the perfect recipe?  Your neighbor might have it.</p>
-    <p>Got some extra leftovers? Your neighbor might want it.</p>
-    <p class="green">Reduce food waste and connect with your neighborhood along the way.</p>
-  </div>
+      <% if (!currentUser) { %>
+        <div class ="explain">
+          <p class="loggedOut">Missing an ingredient to complete the perfect recipe?  Your neighbor might have it.</p>
+          <p class="loggedOut">Got some extra leftovers? Your neighbor might want it.</p>
+          <p class="greenBig">Reduce food waste and connect with your neighborhood along the way.</p>
+        </div>
+      <% }; %>
 
    <footer>
     <% include partials/footer %>

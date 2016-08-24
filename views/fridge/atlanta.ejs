@@ -12,11 +12,11 @@
   <div class="jumbotron neighborhood">
     <main>
         <h3>Neighborhood</h3>
-        <a href="/fridge/new" class="btn btn-success" class="new">Add New Item</a>
     </main>
   </div>
 
 <body>
+    <a href="/fridge/new" class="btn btn-success">Add New Item</a>
     <div class="search">
       <form method="get" action="/atlanta" id="search">
         <div class="form-group">
@@ -28,7 +28,7 @@
                      placeholder="--- Select --- "
                      value selected="<%= searchOptions.neighborhood %>">
                      <% include ../partials/neighborhoods %>
-            </select>
+              </select>
             <br>
           <label>Find a Food</label>
               <input type="text"
@@ -37,13 +37,12 @@
                 value="<%= searchOptions.food %>">
           <br>
           <button type="submit" class="btn btn-info">Search</button>
-          </form>
         </div>
+      </form>
     </div>
 
-</body>
+  </body>
     <div class="col-sm-12">
-
         <% fridgeItems.forEach(function(fridgeItem) { %>
             <h4>
               <div class="itemBackground">
@@ -74,5 +73,5 @@
         </div>
 
 
-</body>
+  </body>
 </html>

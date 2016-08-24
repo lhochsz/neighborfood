@@ -10,15 +10,15 @@
   </header>
 
   <main>
-    <div>
       <div class="jumbotron index">
         <h3>MyFridge</h3>
-        <a href="/fridge/new" class="btn btn-success" class="new">ADD NEW ITEM</a>
       </div>
 
-          <div class="indexExplain">
-            <p>Add your leftovers or extra food items below to share with your community.  Then head to the Neighborhood tab to see what your neighbors are offering!</p>
-          </div>
+      <a href="/fridge/new" class="btn btn-success" class="new">ADD NEW ITEM</a>
+      <div class="indexExplain">
+        <br>
+        <p>Add your leftovers or extra food items below to share with your community.  Then head to the Neighborhood tab to see what your neighbors are offering!</p>
+      </div>
 
       <% fridgeItems.forEach(function(fridgeItem) { %>
         <h4 class="fridgeIndexCaptialize">
