@@ -29,10 +29,6 @@ p.sugar {
   margin-bottom: 10px;
 }
 
-p.green {
-  color: rgb(80, 122, 15);
-}
-
 p.greenBig {
   color: rgb(80, 122, 15);
 }
@@ -66,4 +62,27 @@ p {
 
 nav {
   font-family: 'Montserrat', sans-serif;
+}
+
+
+@media only screen and (max-width: 699px) {
+
+  .jumbotron.myfridge {
+      height: 14em;
+  }
+
+  .jumbotron.neighborhood {
+      height: 14em;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 700px) {
+
+  .jumbotron.myfridge {
+      height: 14em;
+  }
+
+  .jumbotron.neighborhood {
+      height: 14em;
+  }
 }

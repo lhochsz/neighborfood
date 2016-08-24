@@ -62,7 +62,6 @@ router.get('/atlanta', authenticate, function(req, res, next) {
       searchOptions.neighborhood = req.query.neighborhood;
     }
     if (req.query.food) {
-      // searchOptions.food = req.query.food.toLowerCase();
       searchOptions.food = { '$regex' : req.query.food, '$options' : 'i' };
     }
 
@@ -77,7 +76,6 @@ router.get('/atlanta', authenticate, function(req, res, next) {
     return next(err);
   });
 });
-
 
 // GET /logout
 router.get('/logout', function(req, res, next) {

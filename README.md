@@ -8,11 +8,11 @@ NeighborFood helps to reduce food waste and connect neighbors along the way.
 
 For Project 2 at General Assembly Atlanta, I created a web app for users to enter in their leftovers and extra food items.  The items post to a neighborhood board seen by all users.  The users can contact eachother via email to set up a meeting location to exchange food.
 
-Live site: [NeighborFood] (https://)
+Live site: [NeighborFood] (https://neighbor-food.herokuapp.com/)
 
 ## Technologies Used
 * Languages - HTML, CSS, JavaScript, jQuery
-* MEN Stack (MongoDB, Express, NodeJS)
+* MEN Stack: MongoDB/Mongoose, Express, NodeJS)
 * Design - Twitter Bootstrap, Google Fonts
 * Sublime Text 3
 * Heroku

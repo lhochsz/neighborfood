@@ -215,3 +215,73 @@ img {
   display: inline;
   padding-top: 0;
 }
+
+
+@media only screen and (max-width: 699px) {
+    .updated {
+    font-size: 9px;
+  }
+
+  a.fridgeFood {
+    font-size: 12px;
+  }
+
+  img {
+    max-width: 200px;
+    max-height: 150px;
+  }
+
+  .itemBackground {
+    min-width: 270px;
+  }
+
+  p.itemInfo {
+    font-size: 12px;
+  }
+
+  p.contact {
+    font-size: 11px;
+  }
+
+  p.ingredients {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 700px) {
+    .updated {
+    font-size: 13px;
+  }
+
+    a.fridgeFood {
+    font-size: 16px;
+  }
+    img {
+    max-width: 200px;
+    max-height: 150px;
+  }
+
+  .itemBackground {
+    min-width: 270px;
+  }
+
+  p.itemInfo {
+    font-size: 12px;
+  }
+
+  p.contact {
+    font-size: 11px;
+  }
+
+  p.indexIngredients {
+    font-size: 11px;
+  }
+
+  p.ingredients {
+    font-size: 12px;
+  }
+
+  p.meeting {
+    font-size: 10px;
+  }
+}
