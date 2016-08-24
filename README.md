@@ -7,8 +7,8 @@ Have some extra leftovers? A neighbor might want it.
 NeighborFood helps to reduce food waste and connect neighbors along the way.
 Post your extra food items on NeighborFood and browse what others have throughout the Atlanta community.
 
-Live site: [NeighborFood] (https://neighbor-food.herokuapp.com/)
-Github: [NeighborFood GitHub] (https://github.com/lhochsz/neighborfood)
+* Live site: [NeighborFood] (https://neighbor-food.herokuapp.com/)
+* Github: [NeighborFood GitHub] (https://github.com/lhochsz/neighborfood)
 
 For Project 2 for the Web Development Immersive at General Assembly Atlanta, I created a web app for users to enter in their leftovers and extra food items.  The items post to a neighborhood board seen by all users.  The users can contact eachother via email to set up a meeting location to exchange food.
 
