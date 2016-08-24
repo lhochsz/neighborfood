@@ -5,6 +5,10 @@ body {
   color: white;
 }
 
+nav {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .jumbotron {
   font-family: 'Cabin Sketch', cursive;
 }
@@ -106,10 +110,6 @@ h5 {
   margin-left: 1.5em;
 }
 
-nav {
-  font-family: 'Montserrat', sans-serif;
-}
-
 .red-star { color: red; }
 
 .required label:after {
@@ -202,8 +202,8 @@ ul li ul li {
 ul li ul li a {display:inline !important;}
 
 img {
-  max-width: 250px;
-  max-height: 200px;
+  max-width: 300px;
+  max-height: 250px;
   margin: 1em;
 }
 
