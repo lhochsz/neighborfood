@@ -4,7 +4,7 @@
   "private": true,
   "engines": {
     "node": "6.3.1",
-    "npm" : "3.10.3"
+    "npm": "3.10.3"
   },
   "scripts": {
     "start": "nodemon ./bin/www",
@@ -23,6 +23,9 @@
     "method-override": "^2.3.6",
     "mongoose": "^4.5.9",
     "morgan": "~1.7.0",
+    "node": "0.0.0",
+    "node.js": "0.0.0",
+    "npm": "^3.10.6",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.0"
