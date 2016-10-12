@@ -26,6 +26,7 @@ nav {
 .jumbotron.index {
   background: #000 url("/images/strawberries.jpeg") center center;
   background-size: 100%;
+  color: white;
 }
 
 .jumbotron.new {
@@ -52,6 +53,7 @@ nav {
 
 h3 {
   font-size: 60px;
+  color: white;
 }
 
 h4 {
