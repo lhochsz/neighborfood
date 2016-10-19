@@ -53,6 +53,10 @@
                   <% if (fridgeItem.ingredients) { %>
                     <p> Ingredients: <%= fridgeItem.ingredients %> </p>
                   <% } %>
+
+                  <% if (fridgeItem.notes) { %>
+                    <p> My notes: <%= fridgeItem.notes %> </p>
+                  <% } %>
                   </div>
                    <p class="image"><img src="<%= fridgeItem.photo %>"><p>
                 </div>

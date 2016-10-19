@@ -147,7 +147,6 @@ h5 {
 
 .updated {
   font-size: 15px;
-  color: white;
   margin-top: 10px;
 }
 
@@ -157,6 +156,11 @@ h5 {
 
 .meeting {
   font-size: 12px;
+}
+
+.notes {
+  font-size: 14px;
+  color: red;
 }
 
 .ingredients {
@@ -258,7 +262,7 @@ img {
     min-width: 270px;
   }
 
-  p.itemInfo {
+  .itemInfo {
     font-size: 12px;
   }
 
