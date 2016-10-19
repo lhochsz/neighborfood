@@ -95,8 +95,12 @@ h5 {
   font-size: 20px;
 }
 
+div.container {
+  width: 600px;
+}
+
 .panel-custom-heading > .panel-heading {
-  background: #909396;
+  background: #d9dde0;
 }
 
 .itemInfo:first-letter{
@@ -148,6 +152,7 @@ h5 {
 .updated {
   font-size: 15px;
   margin-top: 10px;
+  color: rgb(80, 122, 15);
 }
 
 .contact {
@@ -160,7 +165,8 @@ h5 {
 
 .notes {
   font-size: 14px;
-  color: red;
+  color: rgb(80, 122, 15);
+  text-transform: none;
 }
 
 .ingredients {
