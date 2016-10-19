@@ -5,6 +5,10 @@ body {
   color: white;
 }
 
+body.container-fluid {
+  background-color: rgb(174, 181, 190);
+}
+
 nav {
   font-family: 'Montserrat', sans-serif;
 }
@@ -91,6 +95,10 @@ h5 {
   font-size: 20px;
 }
 
+.panel-custom-heading > .panel-heading {
+  background: #909396;
+}
+
 .itemInfo:first-letter{
   text-transform: capitalize;
 }
@@ -139,7 +147,7 @@ h5 {
 
 .updated {
   font-size: 15px;
-  color: rgb(70, 218, 244);
+  color: white;
   margin-top: 10px;
 }
 
@@ -177,7 +185,7 @@ a:hover {
 
 a.fridgeFood {
     text-decoration: none;
-    color: rgb(80, 122, 15);
+    color: white;
     font-size: 25px;
     display:inline;
     margin-bottom: 20px;
